@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Builder } from '@/components/scenes/Builder'
 
 export default function Page() {
@@ -13,7 +14,9 @@ export default function Page() {
       <div className='flex w-full flex-col border-l-2 border-blue-200 bg-gradient-to-b from-white to-blue-100'>
         <div className='flex w-full flex-row justify-between border-b-2 border-blue-300 p-2'>
           <h2 className='text-center'>CONFIGURATION</h2>
-          <p className=''>RTN</p>
+          <Link className='' href='/'>
+            HOME
+          </Link>
         </div>
         <div className='p-4'>
           <ul>

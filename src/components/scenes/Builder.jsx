@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 const Builder = () => {
-  const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
+  const PC = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.PC), { ssr: false })
   const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
     ssr: false,
     loading: () => (
@@ -22,10 +22,10 @@ const Builder = () => {
 
   return (
     <>
-      <View orbit className='relative h-full  sm:h-48 sm:w-full'>
+      <View orbit className='relative h-full w-full'>
         <Suspense fallback={null}>
-          <Dog scale={2} position={[0, -1.6, 0]} rotation={[0.0, -0.3, 0]} />
-          <Common color={'lightpink'} />
+          <PC scale={2} position={[0, -0.85, 0]} rotation={[0.0, -2.5, 0]} />
+          <Common color={'lightblue'} />
         </Suspense>
       </View>
     </>
