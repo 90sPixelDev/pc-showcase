@@ -2,8 +2,8 @@ import { Layout } from '@/components/dom/Layout'
 import '@/global.css'
 
 export const metadata = {
-  title: 'Next.js + Three.js',
-  description: 'A minimal starter for Nextjs + React-three-fiber and Threejs.',
+  title: 'PC-Showcase',
+  description: 'Put together real pc hardware pieces and get an idea of what your pc will look like!',
 }
 
 export default function RootLayout({ children }) {

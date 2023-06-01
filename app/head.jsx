@@ -1,8 +1,7 @@
-const title = 'React Three Next Starter'
-const url = 'https://react-three-next.vercel.app/'
+const title = 'PC-Showcase'
+const url = ''
 const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
-const author = 'Author'
-const twitter = '@pmndrs'
+const author = 'Lien Font'
 
 export default function Head() {
   return (
@@ -49,12 +48,9 @@ export default function Head() {
       <meta name='theme-color' content='#000' />
       <link rel='shortcut icon' href='/icons/apple-touch-icon.png' />
 
-      {/* 
-      Twitter Summary card
-        documentation: https://dev.twitter.com/cards/getting-started
-        Be sure validate your Twitter card markup on the documentation site. */}
-      <meta name='twitter:card' content='summary' />
-      <meta name='twitter:site' content={twitter} />
+      {/* <link rel='preconnect' href='https://fonts.googleapis.com' />
+      <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+      <link href='https://fonts.googleapis.com/css2?family=Russo+One&display=swap' rel='stylesheet' /> */}
     </>
   )
 }
