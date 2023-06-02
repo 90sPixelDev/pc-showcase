@@ -1,8 +1,9 @@
+import { Suspense, useState, useTransition } from 'react'
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
+import { Environment, OrbitControls, AccumulativeShadows, RandomizedLight, PerspectiveCamera } from '@react-three/drei'
 
 const Builder = () => {
-  const PC = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.PC), { ssr: false })
+  const PC = dynamic(() => import('@/components/canvas/Parts').then((mod) => mod.PC), { ssr: false })
   const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
     ssr: false,
     loading: () => (
@@ -20,12 +21,23 @@ const Builder = () => {
   })
   const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
 
+  const [preset, setPreset] = useState('sunset')
+
   return (
     <>
-      <View orbit className='relative h-full w-full'>
+      <View className='relative h-full w-full'>
         <Suspense fallback={null}>
-          <PC scale={2} position={[0, -0.85, 0]} rotation={[0.0, -2.5, 0]} />
-          <Common color={'lightblue'} />
+          <PerspectiveCamera makeDefault fov={40} position={[0, 0, -5]} />
+          <PC scale={2} position={[0, -0.5, 0]} rotation={[0.0, 0.75, 0]} />
+          {/* <Common color={'white'} /> */}
+          <OrbitControls
+            // autoRotate
+            // autoRotateSpeed={4}
+            enablePan={false}
+            // minPolarAngle={Math.PI / 2.1}
+            maxPolarAngle={Math.PI / 2.1}
+          />
+          <Environment preset={preset} background blur={1} />
         </Suspense>
       </View>
     </>
